@@ -1,23 +1,14 @@
-@extends('layouts.app')
+@extends('template')
+ 
+<!-- judul dari halaman website-->
+@section('judul_halaman_website', 'Halaman Home')
+ 
+<!-- bagian konten -->
+@section('konten_website')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+ </br>
+ <h1>Selamat Datang di Educa Studio!</h1>
+ <p>Ini Adalah Halaman Home Website</p>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+ 
 @endsection

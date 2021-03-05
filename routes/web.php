@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\WebController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +16,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+/*
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+*/
+
+Route::get('/home', [WebController::class, 'home']);
+
+Route::prefix('category') ->group(function () {
+    Route::get('/{id}', [WebController::class, 'product']);
+});
+
+Route::get('/news/{id?}', [WebController::class, 'news']);
+
+Route::prefix('programkerja') ->group(function () {
+    Route::get('/{id}', [WebController::class, 'program']);
+});
+
+Route::get('/about', [WebController::class, 'about']);
+
+Route::resource('/contact', WebController::class);
