@@ -10,5 +10,5 @@
  <h1>Selamat Datang di Educa Studio!</h1>
  <p>Ini Adalah Halaman Home Website</p>
 
- 
 @endsection
+
